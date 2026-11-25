@@ -1,0 +1,14 @@
+services:
+  my-db:
+    image: "postgres:16-alpine"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: ${db_name:?"Postgres database name is required"}
+      POSTGRES_USER: ${user:?"Postgres user is required"}
+      POSTGRES_PASSWORD: ${password:?"Postgres password is required"}
+    volumes:
+      - my-data:/var/lib/postgresql/data
+
+volumes:
+  my-data
