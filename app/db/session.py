@@ -1,15 +1,15 @@
-from sqlmodel import Session, SQLModel, create_engine
+from sqlmodel import Session, create_engine
 
 from app.core.config import settings
 from app.todo.models import *
 from app.users.models import *
 
-DATABASE_URL = f"postgresql://{settings.user}:{settings.password}@{settings.host_name}:{settings.port}/{settings.db_name}"
+# The connection string lives on Settings so Alembic and the app share it.
+DATABASE_URL = settings.database_url
 
 engine = create_engine(DATABASE_URL, echo=True)
 
-# Here we are creating all the tables
-SQLModel.metadata.create_all(engine)
+# Tables are managed by Alembic now, not by create_all().
 
 
 # Making for dependency injection, so that anyone can easily inject it

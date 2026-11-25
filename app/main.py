@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 
-from app.core.config import settings
 from app.todo.router import todo_router
 from app.users.router import user_router
 

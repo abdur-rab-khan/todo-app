@@ -4,11 +4,11 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: ${db_name:?"Postgres database name is required"}
-      POSTGRES_USER: ${user:?"Postgres user is required"}
-      POSTGRES_PASSWORD: ${password:?"Postgres password is required"}
+      POSTGRES_DB: ${DATABASE_NAME:?"Postgres database name is required"}
+      POSTGRES_USER: ${USER:?"Postgres user is required"}
+      POSTGRES_PASSWORD: ${PASSWORD:?"Postgres password is required"}
     volumes:
       - my-data:/var/lib/postgresql/data
 
 volumes:
-  my-data
+  my-data:
