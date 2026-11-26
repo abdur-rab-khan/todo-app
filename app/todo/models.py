@@ -6,7 +6,8 @@ from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlmodel import Column, DateTime, Field, Relationship, SQLModel, func
 
 
-class Todo(SQLModel):
+# 👉 "Table=True" is required otherwise SQLModel will treat as "Pydantic/SQLModel"
+class Todo(SQLModel, table=True):
     __tablename__ = "todos"
 
     id: UUID = Field(
