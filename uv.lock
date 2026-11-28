@@ -808,6 +808,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pwdlib"
+version = "0.4.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/4c/35/dcd08c5125c88d7783b6d2b5bb38d96970f79586e7f75fba79feecfc05b5/pwdlib-0.4.2.tar.gz", hash = "sha256:8f74cfd9c602982a9a05240c5b6484e384d732a891fd3c44befba2be9c4a4748", size = 228154, upload-time = "2026-11-15T13:07:23.013Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/47/1f/26e4bd61ac0b264fb9f1d181fa35d6e2969b2b6fd874d4cca7531b5babd0/pwdlib-0.4.2-py3-none-any.whl", hash = "sha256:5e03f706382a040a04139f2bbb3378fa964661f8a74e1cec8da34a221c801bcf", size = 9881, upload-time = "2026-11-15T13:07:21.779Z" },
+]
+
+[[package]]
 name = "pydantic"
 version = "2.14.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1229,6 +1238,8 @@ dependencies = [
     { name = "alembic" },
     { name = "fastapi", extra = ["standard"] },
     { name = "psycopg", extra = ["binary"] },
+    { name = "pwdlib" },
+    { name = "pydantic", extra = ["email"] },
     { name = "pydantic-settings" },
     { name = "pyjwt" },
     { name = "sqlmodel" },
@@ -1239,6 +1250,8 @@ requires-dist = [
     { name = "alembic", specifier = ">=1.20.1" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.165.0" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.9" },
+    { name = "pwdlib", specifier = ">=0.4.2" },
+    { name = "pydantic", extras = ["email"], specifier = ">=2.14.4" },
     { name = "pydantic-settings", specifier = ">=2.16.3" },
     { name = "pyjwt", specifier = ">=2.15.1" },
     { name = "sqlmodel", specifier = ">=0.0.50" },
